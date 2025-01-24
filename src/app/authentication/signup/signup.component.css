@@ -1,0 +1,32 @@
+/* .bodybg {
+    background: linear-gradient(160deg, #B60000, #FF5733);
+  
+} */
+.bodybg {
+    background: repeating-linear-gradient(
+        145deg,
+        #B60000,
+        #B60000 10px,
+        #A50000 10px,
+        #A50000 20px
+    );
+   
+}
+
+
+.formbg{
+background-color:   #292929;
+
+
+}
+
+.rounded-tr-3xl {
+border-top-right-radius: 10rem;
+}
+.rounded-bl-3xl 
+{
+   border-bottom-left-radius: 10rem; 
+}
+.is-invalid {
+    border: 0px solid red !important;
+  }

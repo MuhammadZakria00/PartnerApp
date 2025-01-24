@@ -1,0 +1,115 @@
+<div class="min-h-screen flex items-center justify-center bg-black">
+    <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm()"
+        class="flex flex-col sm:flex-row max-w-4xl w-full bg-white overflow-hidden shadow-lg">
+      
+        
+        <!-- Left Side -->
+        <div class="relative w-full  sm:w-1/2 rightsideBg flex items-center justify-center  md:rounded-br-3xl">
+            <div class="absolute inset-0 rightsideBg  md:rounded-br-3xl"></div>
+            <img src="assets/img/leftimg.png" class="h-48 sm:h-80 object-contain z-10" alt="Decorative Left Image" />
+        </div>
+
+        <!-- Right Side with Background Image and Left Corner Image -->
+        <div class="w-full  sm:w-1/2 p-8  sm:p-12 relative bg-cover bg-center ">
+         
+            <!-- Image in the Left Corner of Right Side -->
+            <img src="assets/img/Group.png" class="absolute bottom-0 right-0 h-32 sm:h-64 z-20 " alt="Corner Image">
+
+            <div class="relative z-10">
+                <!-- Logo and Header -->
+                <div class="mb-8 flex items-center justify-start gap-2">
+                    <img src="assets/img/logo.png" class="h-14 sm:h-20" alt="Restaurant Logo" />
+                    <div class="flex flex-col items-start">
+                        <p class="text-color text-lg sm:text-4xl font-extrabold leading-none mb-0 uppercase">Restaurant</p>
+                        <p class="text-black text-lg font-bold leading-none mb-0 mt-1 sm:ml-2 uppercase sm:letterspace">
+                            Booking
+                        </p>
+                    </div>
+                </div>
+                <p class="text-lg sm:text-2xl font-extrabold leading-none mb-4 text-center">Login</p>
+
+                <!-- Form Fields -->
+                <div class="space-y-6">
+                    <div class="relative">
+                        <input type="email" formControlName="email" id="floating_email" placeholder=" "
+                            class="peer block w-full rounded-md border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-900 placeholder-transparent focus:border-gray-800 focus:ring-2 focus:ring-gray-800" />
+                            <label
+                            for="floating_email"
+                            class="absolute text-sm transform scale-75 -translate-y-5 top-1 left-2 -z-10 origin-[0] duration-300
+                            peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100
+                            peer-focus:-translate-y-6 peer-focus:scale-75"
+                            [ngClass]="{
+                                'text-gray-500 dark:text-gray-400': !(loginForm.get('email')?.invalid && loginForm.get('email')?.touched),
+                                'text-red-500': loginForm.get('email')?.invalid && loginForm.get('email')?.touched                    }"   >
+                            <ng-container *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+                                <ng-container *ngIf="loginForm.get('email')?.errors?.['required']">
+                                    Email is required
+                                </ng-container>
+                                <ng-container *ngIf="loginForm.get('email')?.errors?.['email']">
+                                    Invalid email format
+                                </ng-container>
+                            </ng-container>
+                            <ng-container *ngIf="!(loginForm.get('email')?.touched && loginForm.get('email')?.invalid)">
+                                Email
+                            </ng-container>
+                        </label>
+                    </div>
+
+                    <div class="relative">
+                        <input type="password" formControlName="password" id="floating_password" placeholder=" "
+                            class="peer block w-full rounded-md border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-900 placeholder-transparent focus:border-gray-800 focus:ring-2 focus:ring-gray-800" />
+                            <label
+                            for="floating_password"
+                            class="absolute text-sm transform scale-75 -translate-y-5 top-1 left-2 -z-10 origin-[0] duration-300
+                            peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100
+                            peer-focus:-translate-y-6 peer-focus:scale-75"
+                            [ngClass]="{            'text-gray-500 dark:text-gray-400': !(loginForm.get('password')?.invalid && loginForm.get('password')?.touched),
+                                'text-red-500': loginForm.get('password')?.invalid && loginForm.get('password')?.touched
+                            }"    >
+                            <ng-container *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+                                <ng-container *ngIf="loginForm.get('password')?.errors?.['required']">
+                                    Password is required
+                                </ng-container>
+                                <ng-container *ngIf="loginForm.get('password')?.errors?.['minlength']">
+                                    Password must be at least 8 characters
+                                </ng-container>
+                            </ng-container>
+                            <ng-container *ngIf="!(loginForm.get('password')?.touched && loginForm.get('password')?.invalid)">
+                                Password
+                            </ng-container>
+                        </label>
+                    </div>
+                </div>
+                <div class="sm:flex items-center justify-between mt-2 sm:mt-4">
+                    <!-- Remember Me Checkbox -->
+                    <div class="flex items-center">
+                        <input id="default-checkbox" type="checkbox" value="" 
+                            class="w-4 h-4 text-color bg-gray-100 border-gray-300 rounded focus:text-color focus:ring-2 focus:ring-color">
+                        <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-700 italic">
+                            Remember Me
+                        </label>
+                    </div>
+                    
+                    <!-- Forget Password Link -->
+                 <p>  
+                    <a href="/signup" class="text-sm font-medium text-gray-700 underline hover:text-black"> Forget Password?</a>
+                </p> 
+                </div>
+                
+
+                <!-- Submit Button -->
+                <div class="mt-2 sm:mt-10">
+                    <button type="submit"
+                        class="w-full text-white rightsideBg hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5">
+                        Log in
+                    </button>
+                    <p *ngIf="_router.url !== '/'" class="text-gray-500 text-sm mt-4">
+                        Don’t have an account?
+                        <a href="/signup" class="text-gray-800 underline hover:text-black">Sign Up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>

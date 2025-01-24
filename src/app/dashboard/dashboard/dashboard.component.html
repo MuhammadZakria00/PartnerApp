@@ -1,0 +1,15 @@
+
+  
+    <!-- Form Controls Section with Button and Search Box -->
+   
+  
+<app-table
+  [columns]="columns"
+  [data]="data"
+  [actions]="actions"
+  [enablePagination]="enablePagination"
+  [totalPages]="totalPages"
+  [backgroundImageUrl]="backgroundImageUrl"
+  (actionClicked)="handleAction($event)"
+  (additionalInfoClicked)="handleAdditionalInfo($event)"
+></app-table>

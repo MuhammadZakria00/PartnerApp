@@ -1,0 +1,99 @@
+<!-- <div class="flex flex-col lg:flex-row lg:space-x-4">
+    <div class=" lg:w-3/4 shadow-md sm:rounded-lg">
+      <div class="sm:overflow-x-auto sm:w-full lg:overflow-x-visible">
+        <table class="min-w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th class="px-6 py-3">
+                <input type="checkbox" (change)="toggleAllSelection($event)" [checked]="isAllSelected()" class="form-checkbox h-5 w-5 text-blue-600" />
+              </th>
+              <th *ngFor="let col of columns" class="px-6 py-3">
+                <button (click)="sortColumn(col.field)" class="text-left flex items-center">
+                  {{ col.header }}
+                  <span *ngIf="sortedColumn === col.field">
+                    <span *ngIf="sortOrder === 'asc'">↑</span>
+                    <span *ngIf="sortOrder === 'desc'">↓</span>
+                  </span>
+                </button>
+              </th>
+              <th *ngIf="actions.length > 0" class="px-6 py-3 text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of pageData; let i = index" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <td class="px-6 py-4">
+                <input type="checkbox" (change)="toggleRowSelection(row)" [checked]="isRowSelected(row)" class="form-checkbox h-5 w-5 text-blue-600" />
+              </td>
+              <td *ngFor="let col of columns" class="px-6 py-4">
+                {{ row[col.field] }}
+              </td>
+              <td *ngIf="actions.length > 0" class="px-6 py-4 text-center flex items-center justify-center space-x-2">
+                <button *ngFor="let action of actions" (click)="onActionClick(action, row)" [ngClass]="action.class" class="px-4 py-2 text-sm rounded flex items-center justify-center">
+                  <i [ngClass]="action.iconClass" class="text-gray-500 text-lg"></i>
+                  <span class="ml-2 text-gray-700">{{ action.label }}</span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+   -->
+  
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th class="px-6 py-3">
+            <input type="checkbox" (change)="toggleAllSelection($event)" [checked]="isAllSelected()" class="form-checkbox h-5 w-5 text-blue-600" />
+          </th>
+          <th *ngFor="let col of columns" class="px-6 py-3">
+            <button (click)="sortColumn(col.field)" class="text-left flex items-center">
+              {{ col.header }}
+              <span *ngIf="sortedColumn === col.field">
+                <span *ngIf="sortOrder === 'asc'">↑</span>
+                <span *ngIf="sortOrder === 'desc'">↓</span>
+              </span>
+            </button>
+          </th>
+          <th *ngIf="actions.length > 0" class="px-6 py-3 text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of pageData; let i = index" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <td class="px-6 py-4">
+            <input type="checkbox" (change)="toggleRowSelection(row)" [checked]="isRowSelected(row)" class="form-checkbox h-5 w-5 text-blue-600" />
+          </td>
+          <td *ngFor="let col of columns" class="px-6 py-4">
+            {{ row[col.field] }}
+          </td>
+          <td *ngIf="actions.length > 0" class="px-6 py-4 text-center flex items-center justify-center space-x-2">
+            <button *ngFor="let action of actions" (click)="onActionClick(action, row)" [ngClass]="action.class" class="px-4 py-2 text-sm rounded flex items-center justify-center">
+              <i [ngClass]="action.iconClass" class="text-gray-500 text-lg"></i>
+              <span class="ml-2 text-gray-700">{{ action.label }}</span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+
+    <!-- <div class="w-full lg:w-1/4 p-4 bg-gray-100 border-l border-gray-300 rounded-lg shadow-md space-y-6 mt-4 lg:mt-0">
+      <h3 class="text-lg font-semibold mb-4 text-gray-800">Filters</h3>
+      <div *ngFor="let col of columns" class="mb-4">
+        <h4 class="font-medium text-gray-700">{{ col.header }}</h4>
+        <div class="flex flex-col space-y-2">
+          <label *ngFor="let value of getUniqueColumnValues(col.field)" class="flex items-center">
+            <input type="checkbox" 
+                   [checked]="selectedFilters[col.field] && selectedFilters[col.field].includes(value)" 
+                   (change)="toggleFilter(col.field, value)" 
+                   class="form-checkbox h-5 w-5 text-blue-600" />
+            <span class="ml-2 text-gray-700">{{ value }}</span>
+          </label>
+        </div>
+      </div>
+    </div> -->
+  
+  

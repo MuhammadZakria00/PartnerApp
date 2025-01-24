@@ -1,0 +1,287 @@
+<div class="min-h-screen flex items-center justify-center bodybg">
+    <form  [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="relative max-w-2xl w-full formbg p-8 sm:p-12 sm:rounded-tr-[10rem] lg:rounded-tr-[10rem] sm:rounded-bl-[9rem] sm:rounded-tl-[2rem] sm:rounded-br-[2rem] shadow-md">
+        <a href="https://flowbite.com/" class="flex items-center justify-center">
+            <img src="assets/img/logo.png" class="h-14 sm:h-32" alt="Restaurant Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
+        </a>
+        <div class="mt-6">
+            <p class="text-center font-serif text-white text-2xl sm:text-4xl">User Register</p>
+        </div>
+        
+        <!-- Form Fields -->
+        <div class="mt-6 space-y-5">
+            <div class="relative z-0 w-full group">
+               
+                <input
+                    type="text"
+                    formControlName="firstname"
+                    id="floating_firstname"
+                    class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer 
+                    dark:text-white dark:border-gray-600 dark:focus:border-blue-500"
+                    [ngClass]="{
+                        'border-gray-500': !(signupForm.get('firstname')?.invalid && signupForm.get('firstname')?.touched),
+                        'border-red-500': signupForm.get('firstname')?.invalid && signupForm.get('firstname')?.touched
+                    }"
+                    placeholder=" "
+                    autocomplete="off"
+                    required           />
+           
+                <label
+                    for="floating_firstname"
+                    class="absolute text-sm transform scale-75 -translate-y-5 top-3 left-0 -z-10 origin-[0] duration-300
+                    peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100
+                    peer-focus:-translate-y-6 peer-focus:scale-75"
+                    [ngClass]="{
+                        'text-gray-500 dark:text-gray-400': !(signupForm.get('firstname')?.invalid && signupForm.get('firstname')?.touched),
+                        'text-red-500': signupForm.get('firstname')?.invalid && signupForm.get('firstname')?.touched                    }"   >
+                    <ng-container *ngIf="signupForm.get('firstname')?.touched && signupForm.get('firstname')?.invalid">
+                        <ng-container *ngIf="signupForm.get('firstname')?.errors?.['required']">
+                            First Name is required
+                        </ng-container>
+                     
+                    </ng-container>
+                    <ng-container *ngIf="!(signupForm.get('firstname')?.touched && signupForm.get('firstname')?.invalid)">
+                        First Name
+                    </ng-container>
+                </label>
+            </div>
+
+
+
+            <div class="relative z-0 w-full group">
+               
+                <input
+                    type="text"
+                    formControlName="lastname"
+                    id="floating_lastname"
+                    class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer 
+                    dark:text-white dark:border-gray-600 dark:focus:border-blue-500"
+                    [ngClass]="{
+                        'border-gray-500': !(signupForm.get('lastname')?.invalid && signupForm.get('lastname')?.touched),
+                        'border-red-500': signupForm.get('lastname')?.invalid && signupForm.get('lastname')?.touched
+                    }"
+                    placeholder=" "
+                    autocomplete="off"
+                    required           />
+           
+                <label
+                    for="floating_lastname"
+                    class="absolute text-sm transform scale-75 -translate-y-5 top-3 left-0 -z-10 origin-[0] duration-300
+                    peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100
+                    peer-focus:-translate-y-6 peer-focus:scale-75"
+                    [ngClass]="{
+                        'text-gray-500 dark:text-gray-400': !(signupForm.get('lastname')?.invalid && signupForm.get('lastname')?.touched),
+                        'text-red-500': signupForm.get('lastname')?.invalid && signupForm.get('lastname')?.touched                    }"   >
+                    <ng-container *ngIf="signupForm.get('lastname')?.touched && signupForm.get('lastname')?.invalid">
+                        <ng-container *ngIf="signupForm.get('lastname')?.errors?.['required']">
+                            lastname is required
+                        </ng-container>
+                      
+                    </ng-container>
+                    <ng-container *ngIf="!(signupForm.get('lastname')?.touched && signupForm.get('lastname')?.invalid)">
+                        Last Name
+                    </ng-container>
+                </label>
+            </div>
+
+
+
+
+
+
+
+            <div class="relative z-0 w-full group">
+                <!-- Phone Number Input Field -->
+                <input
+                    type="text"
+                    formControlName="phoneNumber"
+                    id="floating_phoneNumber"
+                    class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 peer 
+                    dark:text-white dark:border-gray-600 dark:focus:border-blue-500"
+                    [ngClass]="{
+                        'border-gray-300': !(signupForm.get('phoneNumber')?.invalid && signupForm.get('phoneNumber')?.touched),
+                        'border-red-500': signupForm.get('phoneNumber')?.invalid && signupForm.get('phoneNumber')?.touched
+                    }"
+                    placeholder=" "
+                    autocomplete="off"
+                    required
+                />
+                <!-- Floating Label -->
+                <label
+                    for="floating_phoneNumber"
+                    class="absolute text-sm transform scale-75 -translate-y-5 top-3 left-0 -z-10 origin-[0] duration-300
+                    peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100
+                    peer-focus:-translate-y-6 peer-focus:scale-75"
+                    [ngClass]="{
+                        'text-gray-500 dark:text-gray-400': !(signupForm.get('phoneNumber')?.invalid && signupForm.get('phoneNumber')?.touched),
+                        'text-red-500': signupForm.get('phoneNumber')?.invalid && signupForm.get('phoneNumber')?.touched
+                    }"
+                >
+                    <ng-container *ngIf="signupForm.get('phoneNumber')?.touched && signupForm.get('phoneNumber')?.invalid">
+                        <ng-container *ngIf="signupForm.get('phoneNumber')?.errors?.['required']">
+                            Phone Number is required
+                        </ng-container>
+                        <ng-container *ngIf="signupForm.get('phoneNumber')?.errors?.['pattern']">
+                            Only numbers are allowed
+                        </ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="!(signupForm.get('phoneNumber')?.touched && signupForm.get('phoneNumber')?.invalid)">
+                        Phone Number
+                    </ng-container>
+                </label>
+            </div>
+            
+
+            <div class="relative z-0 w-full group">
+               
+                <input
+                    type="email"
+                    formControlName="email"
+                    id="floating_email"
+                    class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer 
+                    dark:text-white dark:border-gray-600 dark:focus:border-blue-500"
+                    [ngClass]="{
+                        'border-gray-500': !(signupForm.get('email')?.invalid && signupForm.get('email')?.touched),
+                        'border-red-500': signupForm.get('email')?.invalid && signupForm.get('email')?.touched
+                    }"
+                    placeholder=" "
+                    autocomplete="off"
+                    required           />
+           
+                <label
+                    for="floating_email"
+                    class="absolute text-sm transform scale-75 -translate-y-5 top-3 left-0 -z-10 origin-[0] duration-300
+                    peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100
+                    peer-focus:-translate-y-6 peer-focus:scale-75"
+                    [ngClass]="{
+                        'text-gray-500 dark:text-gray-400': !(signupForm.get('email')?.invalid && signupForm.get('email')?.touched),
+                        'text-red-500': signupForm.get('email')?.invalid && signupForm.get('email')?.touched                    }"   >
+                    <ng-container *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid">
+                        <ng-container *ngIf="signupForm.get('email')?.errors?.['required']">
+                            Email is required
+                        </ng-container>
+                        <ng-container *ngIf="signupForm.get('email')?.errors?.['email']">
+                            Invalid email format
+                        </ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="!(signupForm.get('email')?.touched && signupForm.get('email')?.invalid)">
+                        Email
+                    </ng-container>
+                </label>
+            </div>
+            
+            
+
+
+<div class="relative z-0 w-full group">
+
+    <input
+        type="password"
+        formControlName="password"
+        id="floating_password"
+        class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 peer
+        border-gray-300 focus:border-white dark:text-white dark:border-gray-600 dark:focus:border-blue-500"
+        [ngClass]="{
+            'border-gray-300': !(signupForm.get('password')?.invalid && signupForm.get('password')?.touched),
+            'border-red-500': signupForm.get('password')?.invalid && signupForm.get('password')?.touched        }"
+        placeholder=" "        autocomplete="off"        required    />
+
+    <label
+        for="floating_password"
+        class="absolute text-sm transform scale-75 -translate-y-5 top-3 left-0 -z-10 origin-[0] duration-300
+        peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100
+        peer-focus:-translate-y-6 peer-focus:scale-75"
+        [ngClass]="{            'text-gray-500 dark:text-gray-400': !(signupForm.get('password')?.invalid && signupForm.get('password')?.touched),
+            'text-red-500': signupForm.get('password')?.invalid && signupForm.get('password')?.touched
+        }"    >
+        <ng-container *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid">
+            <ng-container *ngIf="signupForm.get('password')?.errors?.['required']">
+                Password is required
+            </ng-container>
+            <ng-container *ngIf="signupForm.get('password')?.errors?.['minlength']">
+                Password must be at least 8 characters
+            </ng-container>
+        </ng-container>
+        <ng-container *ngIf="!(signupForm.get('password')?.touched && signupForm.get('password')?.invalid)">
+            Password
+        </ng-container>
+    </label>
+</div>
+
+
+
+
+
+
+<div class="relative z-0 w-full group">
+               
+    <input
+        type="text"
+        formControlName="restaurantName"
+        id="floating_restaurantName"
+        class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer 
+        dark:text-white dark:border-gray-600 dark:focus:border-blue-500"
+        [ngClass]="{
+            'border-gray-500': !(signupForm.get('restaurantName')?.invalid && signupForm.get('restaurantName')?.touched),
+            'border-red-500': signupForm.get('restaurantName')?.invalid && signupForm.get('restaurantName')?.touched
+        }"
+        placeholder=" "
+        autocomplete="off"
+        required           />
+
+    <label
+        for="floating_restaurantName"
+        class="absolute text-sm transform scale-75 -translate-y-5 top-3 left-0 -z-10 origin-[0] duration-300
+        peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100
+        peer-focus:-translate-y-6 peer-focus:scale-75"
+        [ngClass]="{
+            'text-gray-500 dark:text-gray-400': !(signupForm.get('restaurantName')?.invalid && signupForm.get('restaurantName')?.touched),
+            'text-red-500': signupForm.get('restaurantName')?.invalid && signupForm.get('restaurantName')?.touched                    }"   >
+        <ng-container *ngIf="signupForm.get('restaurantName')?.touched && signupForm.get('restaurantName')?.invalid">
+            <ng-container *ngIf="signupForm.get('restaurantName')?.errors?.['required']">
+                Restaurant is required
+            </ng-container>
+           
+        </ng-container>
+        <ng-container *ngIf="!(signupForm.get('restaurantName')?.touched && signupForm.get('restaurantName')?.invalid)">
+            Restaurant Name
+        </ng-container>
+    </label>
+</div>
+
+
+       
+        </div>
+
+        <!-- Button Section -->
+        <div class="relative flex flex-col items-center justify-center mt-10">
+            <!-- Left Image (Hidden on Small Screens) -->
+            <div class="absolute -bottom-8 left-12 transform -translate-x-1/2 hidden sm:block">
+                <img src="assets/img/right.png" class="h-36" alt="Left Image" />
+            </div>
+
+            <!-- Center Content -->
+            <div class="flex flex-col items-center justify-center text-center mx-auto">
+                <button
+                    type="submit"
+                    class="text-white bodybg hover:bg-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-8 sm:px-12 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Sign Up
+                </button>
+                <p class="text-gray-400 mt-4 sm:mt-5 text-sm sm:text-base">
+                   Already have an account?
+                </p>
+                <a
+                    type="button" href="/"         
+                   class="text-white bg-transparent border-2 mt-4 sm:mt-5 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 sm:px-12 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Log in
+            </a>
+
+            </div>
+
+            <!-- Right Image (Hidden on Small Screens) -->
+            <div class="absolute -bottom-10 -right-4 transform translate-x-1/2 hidden sm:block">
+                <img src="assets/img/left.png" class="h-36" alt="Right Image" />
+            </div>
+        </div>
+    </form>
+</div>

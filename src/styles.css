@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    color: #F64E60 !important;
+  }
+  .bodybg {
+
+    background: black !important;
+ }
+ .rightsideBg{
+     background: #B60000 !important;
+ }
+ .text-color
+ {
+     color: #B60000 !important;
+ }
+ 
+ .formbg{
+ background-color:   white !important;
+ 
+ 
+ }
+ 
+ .letterspace{
+     letter-spacing: 1.3em !important;
+ }
+ 
+ .rounded-br-3xl {
+     border-bottom-right-radius: 20rem !important;
+   }
+   @media (min-width: 568px) {
+     .sm\:rounded-br-3xl {
+         border-bottom-right-radius: 20rem !important; 
+       }
+     .sm\:letterspace{
+         letter-spacing: 1.3em;
+     }
+   }
+   @media (min-width: 768px) {
+     .md\:rounded-br-3xl {
+       border-bottom-right-radius: 20rem !important; 
+     }
+     .md\:letterspace{
+         letter-spacing: 1.3em;
+     }
+   }
+   
+   @media (min-width: 1024px) {
+     .lg\:rounded-br-3xl {
+       border-bottom-right-radius: 20em !important;
+     }
+     .lg\:letterspace{
+         letter-spacing: 1.3em !important;
+     }
+   }
+   
+ .is-invalid {
+     border: 0px solid red !important;
+   }
